@@ -13,6 +13,13 @@ window.onload = function() {
     // add the random line in a div
     document.getElementById( 'verse' ).innerHTML = randomLine;
 };
-request.open( 'GET', 'https://qtk.github.io/truly-random-bible-verse/kjvdat.txt', true );
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+}
+
+n = getRandomIntInclusive(0, 31101).toString();
+request.open( 'GET', 'https://qtk.github.io/truly-random-bible-verse/verses/' + n + '.txt', true );
 request.send();
 }
