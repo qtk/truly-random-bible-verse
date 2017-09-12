@@ -1,5 +1,4 @@
-window.onload = function() {
-  var request = new XMLHttpRequest();
+var request = new XMLHttpRequest();
   request.onload = function() {
     // get the file contents
     var fileContent = this.responseText;
@@ -9,10 +8,12 @@ window.onload = function() {
     var randomLineIndex = Math.floor( Math.random() * fileContentLines.length );
     // extract the value
     var randomLine = fileContentLines[ randomLineIndex ];
+  };
 
-    // add the random line in a div
+window.onload = function() {
     document.getElementById( 'verse' ).innerHTML = randomLine;
 };
+
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
